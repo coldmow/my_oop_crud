@@ -40,7 +40,7 @@ class PageRenderer{
 		$this->rendered_content['header'] = 
 '
 	<div class="header">
-		<img src="" alt="Modern Carpenter B.V.">
+		<img src="" alt="Carpenter B.V.">
 		<div class="login">
 			<input type="text" name="" id="" placeholder="Gebruikersnaam">
 			<br><br>
