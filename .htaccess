@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+
+RewriteBase /my_workspace/oop_crud_project/
+# RewriteBase /my_workspace/App root folder/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+# Turns everthing after the first '/' in the url into a $_GET[''] variable.

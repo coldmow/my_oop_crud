@@ -1,0 +1,43 @@
+body{
+	background-color: blanchedalmond;
+	display: grid;
+	grid-template-columns: 260px 1fr 200px;
+	grid-template-rows: auto auto 1fr;
+	grid-template-areas: 
+	"header header header"
+	"menu content content"
+	". content content"
+	;
+	grid-gap: 1em;
+	margin: 1em;
+}
+body, .menubox, .content, .header .login{
+	box-sizing: border-box;
+}
+.header{
+	grid-area: header;
+	background-color: burlywood;
+	padding: 1em;
+	/* display: table; */
+}
+	.header img{
+		margin: 1em;
+	}
+	.login{
+		background-color: cadetblue;
+		padding: 1em;
+		float: right;
+	}
+.menubox{
+	grid-area: menu;
+	background-color: burlywood;
+	padding: 1em 0;
+	/* height: 500px; */
+}
+.content{
+	grid-area: content;
+	background-color: burlywood;
+	/* float: right; */
+	height: 70vh;
+	padding: 1em;
+}
