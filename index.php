@@ -41,15 +41,17 @@ echo $page->print_head();
 
 
 <?php
-/*
-TODO: 
-- perfect & complete 'PageRenderer' class
-- build router
-- build login class
-- build crud classes
-- build search crud function
+/**
+ * TODO:
+ * find the best way to initialize a class when navigating to a certain page.
+ * build router
+ * perfect & complete 'PageRenderer' class
+ * build login class
+ * build crud classes
+ * build search crud function
+ 
+ √ make .htaccess file 
+ √ make root and directory-seperator contstants 
 
-√ make .htaccess file 
-√ make root and directory-seperator contstants 
-*/
+ */
 ?>

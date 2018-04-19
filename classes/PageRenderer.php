@@ -1,12 +1,9 @@
 <?php 
-/**
- * 
- * 
- */
+
 class PageRenderer{
 	
 	private		$rendered_content	= [];
-	protected	$dynamic_content	= [];
+	// protected	$dynamic_content	= [];
 
 
 	public function print_head(){
@@ -21,6 +18,15 @@ class PageRenderer{
 	public function print_content(){
 		return $this->rendered_content['content'];
 	}
+
+	public function process_dyn_data(){
+		if( isset( $_GET['url'] ) ){
+			return $_GET['url'];
+		}else{
+			return '';
+		}
+	}
+
 
 	public function __construct(){
 		$this->content_filler();
@@ -73,7 +79,7 @@ class PageRenderer{
 '
 	<div class="content">
 	hello
-		'. $this->dynamic_content .'
+		'. $this->process_dyn_data() .'
 	</div>
 ';
 
