@@ -20,9 +20,9 @@ class PageRenderer{
 	}
 
 	public function process_dyn_data(){
-		if( isset( $_GET['url'] ) ){
+		if ( isset( $_GET['url'] ) ){
 			return $_GET['url'];
-		}else{
+		} else {
 			return '';
 		}
 	}
