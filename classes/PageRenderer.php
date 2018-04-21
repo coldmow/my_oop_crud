@@ -3,20 +3,14 @@
 class PageRenderer{
 	
 	private		$rendered_content	= [];
-	// protected	$dynamic_content	= [];
+	private		$router;
+	protected	$dynamic_content	= [];
 
+	public function changeController(){
 
-	public function print_head(){
-		return $this->rendered_content['headinfo'];
 	}
-	public function print_header(){
-		return $this->rendered_content['header'];
-	}
-	public function print_menu(){
-		return $this->rendered_content['menu'];
-	}
-	public function print_content(){
-		return $this->rendered_content['content'];
+	public function printer(){
+		return $this->rendered_content;
 	}
 
 	public function process_dyn_data(){
@@ -27,9 +21,16 @@ class PageRenderer{
 		}
 	}
 
-
 	public function __construct(){
+		/**
+		 * This constructor must run at the beginning of the document to immediately fill the document from the beginning
+		 */
+		
 		$this->content_filler();
+
+		if ( isset($_GET['url']) ){
+
+		}
 	}
 
 	protected function content_filler(){
@@ -79,7 +80,7 @@ class PageRenderer{
 '
 	<div class="content">
 	hello
-		'. $this->process_dyn_data() .'
+'. $this->process_dyn_data() .'
 	</div>
 ';
 

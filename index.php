@@ -20,17 +20,17 @@ $page = new PageRenderer();
 
 <head>
 <?php
-echo $page->print_head();
+echo $page->printer()['headinfo'];
 ?>
 </head>
 
 <body>
 	<?php
-	echo $page->print_header();
+	echo $page->printer()['header'];
 	
-	echo $page->print_menu();
+	echo $page->printer()['menu'];
 
-	echo $page->print_content()
+	echo $page->printer()['content']
 	?>
 </body>
 </html>
