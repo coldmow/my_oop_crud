@@ -56,7 +56,7 @@ echo $page->printer()['headinfo'];
  * 
  * 
  * 
- * 
+ * build a seperate file that contains all the requires content and let the PageRenderer class summon it. Use a fitting format like JSON or similar.
  * find the best way to initialize a class when navigating to a certain page.
  * perfect & complete 'PageRenderer' class
  * build login class
