@@ -2,42 +2,36 @@
 
 class PageRenderer{
 	
-	private		$rendered_content	= [];
-	// private		$router;
-	private		$dynamic_content	= [];
+	private	$rendered_content	= [];
+	private	$DB_control			= new DBcontroller();
 
 	
-	public function printer( $f ){
+	public function printer( $sector ){
 		
 		return $this->rendered_content;
 	}
-
-	public function blubSans( $Page = '' ){
-		if ( $Page === 'Artikelen' ){
-			
-		} 
-		
-		//return $contentReturned
-		/* The page that is requested via the get variable, must return the unchanging content of the page. In there there must be a way to request a functionality that takes in parameters to set up its settings.
-		- This can be a functionality that puts DB data in a table.
-		*/
-	}
+	//return $contentReturned
+	/* The page that is requested via the get variable, must return the unchanging content of the page. In there there must be a way to request a dynamic functionality that takes in parameters to set up its settings.
+	- This can be a functionality that puts DB data in a table.
+	*/
 
 	protected function content_render(){
 
-		$this->rendered_content['Artikelen']['content'] = 
+		$this->rendered_content['content']['Artikelen'] = 
 '
 	<div class="content">
 		<h1>Welcome</h1>
-		' . $this->blubSans( $_GET['url'] ) . '
 		<p>
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.
 		</p>
-		' . $this->dynamic_content['pageContent'] .'
+		
+		' . $DB_control->read( '' ) . '
+
+
 	</div>
 ';
 
-		$this->rendered_content['Artikelen']['headinfo'] = 
+		$this->rendered_content['headinfo']['Artikelen'] = 
 '
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,7 +40,7 @@ class PageRenderer{
 	<link rel="stylesheet" href="css' . DS . 'style.css">
 ';
 		
-		$this->rendered_content['Artikelen']['header'] = 
+		$this->rendered_content['header']['Artikelen'] = 
 '
 	<div class="header">
 		<img src="" alt="Carpenter B.V.">
@@ -61,7 +55,7 @@ class PageRenderer{
 ';
 
 		
-		$this->rendered_content['Artikelen']['menu'] = 
+		$this->rendered_content['menu']['Artikelen'] = 
 '
 	<div class="menubox">
 		<ul>
