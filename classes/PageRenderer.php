@@ -3,12 +3,16 @@
 class PageRenderer{
 	
 	private	$rendered_content	= [];
-	private	$DB_control			= new DBcontroller();
+	// private	$DB_control			= new DBcontroller();
 
 	
-	public function printer( $sector ){
-		
-		return $this->rendered_content;
+	public function printer( $sector, $page )
+	{
+		if ( isset( $this->rendered_content[$sector][$page] ) ){
+			return $this->rendered_content[$sector][$page];
+		}else{
+			return '';
+		}
 	}
 	//return $contentReturned
 	/* The page that is requested via the get variable, must return the unchanging content of the page. In there there must be a way to request a dynamic functionality that takes in parameters to set up its settings.
@@ -25,7 +29,7 @@ class PageRenderer{
 			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.
 		</p>
 		
-		' . $DB_control->read( '' ) . '
+		' /* . $DB_control->read( '' ) */ . '
 
 
 	</div>
