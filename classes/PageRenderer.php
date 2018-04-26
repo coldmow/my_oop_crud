@@ -8,10 +8,12 @@ class PageRenderer{
 
 	
 	public function print_sct( $section ){
-		if ( isset( $this->rendered_content[$section][$this->rqdPage] ) ){
+		if ( isset( $this->rendered_content[$section][$this->rqdPage]/*condition looks for if this class has been instantiated and loaded in the content in the property array. It should look only for if the GET contains a requested page */ ) ){
 			return $this->rendered_content[$section][$this->rqdPage];
-		}elseif (! isset( )){
-			return 
+			
+		}elseif (! isset( $_GET['url'])){
+			return $this->rendered_content[$section]['home'];
+
 		}else{
 			return '';
 		}
@@ -83,13 +85,10 @@ class PageRenderer{
 
 	}
 	public function __construct(){
-		/**
-		 * This constructor must run at the beginning of the document to immediately fill the document from the beginning
-		 */
 		if ( isset( $_GET['url'] )){
 			$this->rqdPage = $_GET['url'];
 		}
-		//is it efficient to load in all content when just instantiating the object? It's better to load it in when running the ibject methods that request the page section.
+		//is it efficient to load in all content when just instantiating the object? It's better to load it in when running the object methods that request the page section.	:
 		$this->content_render();
 	}
 
