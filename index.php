@@ -22,17 +22,17 @@ $page = new PageRenderer();
 
 <head>
 <?php
-echo $page->printer('headinfo', $_GET['url'] );
+echo $page->print_sct('headinfo');
 ?>
 </head>
 
 <body>
 	<?php
-	echo $page->printer('header', $_GET['url']);
+	echo $page->print_sct('header');
 	
-	echo $page->printer('menu', $_GET['url']);
+	echo $page->print_sct('menu');
 
-	echo $page->printer('content', $_GET['url']);
+	echo $page->print_sct('content');
 	?>
 </body>
 </html>

@@ -3,13 +3,15 @@
 class PageRenderer{
 	
 	private	$rendered_content	= [];
+	private	$rqdPage;
 	// private	$DB_control			= new DBcontroller();
 
 	
-	public function printer( $sector, $page )
-	{
-		if ( isset( $this->rendered_content[$sector][$page] ) ){
-			return $this->rendered_content[$sector][$page];
+	public function print_sct( $section ){
+		if ( isset( $this->rendered_content[$section][$this->rqdPage] ) ){
+			return $this->rendered_content[$section][$this->rqdPage];
+		}elseif (! isset( )){
+			return 
 		}else{
 			return '';
 		}
@@ -84,7 +86,10 @@ class PageRenderer{
 		/**
 		 * This constructor must run at the beginning of the document to immediately fill the document from the beginning
 		 */
-		
+		if ( isset( $_GET['url'] )){
+			$this->rqdPage = $_GET['url'];
+		}
+		//is it efficient to load in all content when just instantiating the object? It's better to load it in when running the ibject methods that request the page section.
 		$this->content_render();
 	}
 
