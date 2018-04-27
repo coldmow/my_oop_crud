@@ -1,0 +1,58 @@
+{
+	"Home" : {
+
+		"<html lang=\"en\">": {
+			"<head>": {
+				"<meta charset=\"UTF-8\">": "",
+				"<meta name=\"viewport\" content=\"width=device-width initial-scale=1.0\">": "",
+				"<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">": "",
+				"<title>Document</title>": ""
+			},
+			"</head>": "",
+			"<body>": {
+				"<div class=\"content\">": {
+					"<h1>Welcome</h1>": "",
+					"<p>": {
+						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.": ""
+					},
+					"</p>": ""
+				},
+				"</div>": ""
+			},
+			"</body>": ""
+		},
+		"</html>": ""
+	},
+	
+	"Artikelen" : {
+		
+		"<html lang=\"en\">": {
+			"<head>": {
+				"<meta charset=\"UTF-8\">": "",
+				"<meta name=\"viewport\" content=\"width=device-width initial-scale=1.0\">": "",
+				"<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">": "",
+				"<title>Document</title>": ""
+			},
+			"</head>": "",
+			"<body>": {
+				"<div class=\"content\">": {
+					"<h1>Welcome</h1>": "",
+					"<p>": {
+						"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.": ""
+					},
+					"</p>": ""
+				},
+				"</div>": ""
+			},
+			"</body>": ""
+		},
+		"</html>": ""
+	},
+
+	"Locaties" : "",
+	"Fabrieken" : "",
+	"Voorraad" : "",
+	"Medewerkers" : "",
+	"Contact" : ""
+}
+

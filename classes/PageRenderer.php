@@ -1,3 +1,4 @@
+!
 <?php 
 
 class PageRenderer{
@@ -6,12 +7,23 @@ class PageRenderer{
 	private	$rqdPage;
 	// private	$DB_control			= new DBcontroller();
 
+	private function contentProvider(){
+		$json = file_get_contents(PageContent.json);
+		return json_decode($json, true);
+
+	}
 	
 	public function print_sct( $section ){
-		if ( isset( $this->rendered_content[$section][$this->rqdPage]/*condition looks for if this class has been instantiated and loaded in the content in the property array. It should look only for if the GET contains a requested page */ ) ){
+		if ( isset( $_GET['url'] )){
+			//check if it will run for non existing pages 
 			return $this->rendered_content[$section][$this->rqdPage];
-			
-		}elseif (! isset( $_GET['url'])){
+
+		}
+		// if ( isset( $this->rendered_content[$section][$this->rqdPage]/*condition looks for if this class has been instantiated and loaded in the content in the property array. It should look only for if the GET contains a requested page */ ) ){
+			// return $this->rendered_content[$section][$this->rqdPage];
+
+		// }
+		elseif (! isset( $_GET['url'])){
 			return $this->rendered_content[$section]['home'];
 
 		}else{
@@ -24,6 +36,17 @@ class PageRenderer{
 	*/
 
 	protected function content_render(){
+
+		
+		/*TODO:
+		- format the json file so that dynamic content can be inserted inside nested html elements, so that they can be printed out using a foreach on the to-array-converted json
+		*/ 
+		$contentArray = $this->contentProvider();
+
+		foreach ($variable as $key => $value) {
+			//array['content']['Artikelen']
+			$this->rendered_content[$key][''];
+		}
 
 		$this->rendered_content['content']['Artikelen'] = 
 '
@@ -85,7 +108,7 @@ class PageRenderer{
 
 	}
 	public function __construct(){
-		if ( isset( $_GET['url'] )){
+		if ( isset( $_GET['url'] ) /* && {GET'url' exists in the json array}*/){
 			$this->rqdPage = $_GET['url'];
 		}
 		//is it efficient to load in all content when just instantiating the object? It's better to load it in when running the object methods that request the page section.	:
