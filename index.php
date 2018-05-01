@@ -14,13 +14,24 @@ spl_autoload_register( function($class){
 	require_once ROOT . DS . 'classes' . DS . $class . '.php';	
 });
 
-
 $page = new PageRenderer();
 
+?>
 
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<?=$page->outputHTML('headinfo')?>
+	</head>
+	<body>
+		<?=DS?>
+		<?=$page->outputHTML('header')?>
+		<?=$page->outputHTML('menu')?>
+		<?=$page->outputHTML('content')?>
+</body>
+</html>
 
-
-
+<?php
 
 
 
@@ -52,27 +63,5 @@ $page = new PageRenderer();
  √ make .htaccess file 
  √ make root and directory-seperator contstants 
 _
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<?php
-echo $page->print_sct('headinfo');
-?>
-</head>
-
-<body>
-	<?php
-	echo $page->print_sct('header');
-	
-	echo $page->print_sct('menu');
-
-	echo $page->print_sct('content');
-	?>
-</body>
-</html>
-
 
 */?>

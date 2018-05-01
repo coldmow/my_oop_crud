@@ -1,10 +1,15 @@
 <?php
 
 class PageTemplates{
-	public $template;
+	private $template = [];
 
 	public function getHTMLsct($section){
-		$this->template[$section] =
+		return $this->template[ $section ];
+	}
+
+	public function __construct(){
+
+		$this->template['headinfo'] =
 		'
 		<head>
 		<meta charset="UTF-8">
@@ -15,7 +20,7 @@ class PageTemplates{
 		</head>
 		';
 		
-		$this->template[$section] =
+		$this->template['header'] =
 		'
 		<div class="header">
 			<img src="" alt="Carpenter B.V.">
@@ -31,7 +36,7 @@ class PageTemplates{
 		</div>
 		';
 		
-		$this->template[$section] =
+		$this->template['menu'] =
 		'
 		<div class="menubox">
 			<ul>
@@ -48,17 +53,18 @@ class PageTemplates{
 		</div>
 		';
 		
-		$this->template[$section] =
+		$this->template['content'] =
 		'
 		<div class="content">
-			'./*
+			
 			<h1>Welcome</h1>
 			<p>
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.
-			</p>*/'
+			</p>  './* */'
 		</div>
 		';
 	}
+
 }
 
 
