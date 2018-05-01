@@ -1,4 +1,5 @@
 <?php
+// Prepare error reporting as precaution 
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
@@ -10,36 +11,19 @@ define('ROOT', __DIR__);
 
 // class autoloader:
 spl_autoload_register( function($class){
-	require ROOT . DS . 'classes' . DS . $class . '.php';	
+	require_once ROOT . DS . 'classes' . DS . $class . '.php';	
 });
 
 
 $page = new PageRenderer();
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<?php
-echo $page->print_sct('headinfo');
-?>
-</head>
-
-<body>
-	<?php
-	echo $page->print_sct('header');
-	
-	echo $page->print_sct('menu');
-
-	echo $page->print_sct('content');
-	?>
-</body>
-</html>
 
 
 
-<?php
+
+
+
+
 /**
  * TODO:
  * build operations that can decide which page can use it, example:
@@ -67,6 +51,28 @@ echo $page->print_sct('headinfo');
  
  √ make .htaccess file 
  √ make root and directory-seperator contstants 
+_
 
- */
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<?php
+echo $page->print_sct('headinfo');
 ?>
+</head>
+
+<body>
+	<?php
+	echo $page->print_sct('header');
+	
+	echo $page->print_sct('menu');
+
+	echo $page->print_sct('content');
+	?>
+</body>
+</html>
+
+
+*/?>
