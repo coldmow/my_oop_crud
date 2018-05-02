@@ -3,24 +3,36 @@
 class PageRenderer{
 	
 	private	$DOMhandler;
+	private $templateObj;
 	private	$rqdPage;
 	// private	$DB_control			= new DBcontroller();
 	
-	private function primeHTML( $section ){
-		$templatesObj = new PageTemplates();
+	private function getTemplate( $sections ){
 
-		$template = $templatesObj->getHTMLsct( $section);
+		$template = $this->templatesObj->getHTMLsct( $sections);
 
-		$this->DOMhandler->loadHTML( $template );
+		$this->DOMhandler->loadHTML( $template);
+	}
+	
+	private function sectionCaller( $sections){
+
+		$this->getTemplate( $sections );
 	}
 
-	public function outputHTML( $section){
-		$this->primeHTML( $section);
+	public function print_content( $sections){
+		$this->sectionCaller( $sections );
+		
 		echo $this->DOMhandler->saveHTML();
+
+	}
+
+	public function print_hard( $sections){
+		echo $this->templateObj->getHTMLsct( $sections );
 	}
 
 	public function __construct(){
 		$this->DOMhandler = new DOMDocument();
+		$this->templatesObj = new PageTemplates();
 		
 		if ( isset( $_GET['url'] ) /* && {GET'url' exists in the json array}*/){
 			$this->rqdPage = $_GET['url'];

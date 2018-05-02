@@ -3,8 +3,13 @@
 class PageTemplates{
 	private $template = [];
 
-	public function getHTMLsct($section){
-		return $this->template[ $section ];
+	public function getHTMLsct( $sections){
+		
+		$output = '';
+		foreach ($sections as $key) {
+			$output .= $this->template[ $key];
+		}
+		return $output;
 	}
 
 	public function __construct(){

@@ -21,14 +21,12 @@ $page = new PageRenderer();
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<?=$page->outputHTML('headinfo')?>
+		<!--$page->print_hard( ['headinfo'])-->
 	</head>
+
 	<body>
-		<?=DS?>
-		<?=$page->outputHTML('header')?>
-		<?=$page->outputHTML('menu')?>
-		<?=$page->outputHTML('content')?>
-</body>
+		<?=$page->print_content( ['header', 'menu', 'content'] )?>
+	</body>
 </html>
 
 <?php
