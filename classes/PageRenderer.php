@@ -3,7 +3,7 @@
 class PageRenderer{
 	
 	private	$DOMhandler;
-	private $templateObj;
+	private $templatesObj;
 	private	$rqdPage;
 	// private	$DB_control			= new DBcontroller();
 	
@@ -21,13 +21,11 @@ class PageRenderer{
 
 	public function print_content( $sections){
 		$this->sectionCaller( $sections );
-		
-		echo $this->DOMhandler->saveHTML();
-
+		return $this->DOMhandler->saveHTML();
 	}
 
 	public function print_hard( $sections){
-		echo $this->templateObj->getHTMLsct( $sections );
+		return $this->templatesObj->getHTMLsct( $sections );
 	}
 
 	public function __construct(){

@@ -20,12 +20,11 @@ $page = new PageRenderer();
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!--$page->print_hard( ['headinfo'])-->
-	</head>
-
+	<!--head-->
+		<?=$page->print_hard( ['headinfo'])?>
+	<!--head-->
 	<body>
-		<?=$page->print_content( ['header', 'menu', 'content'] )?>
+		<?=$page->print_hard(['header', 'menu', 'content'])?>
 	</body>
 </html>
 
@@ -35,31 +34,27 @@ $page = new PageRenderer();
 
 /**
  * TODO:
- * build operations that can decide which page can use it, example:
- * 		a global db read operation that only reads tables from the db
- * 			a specific read operation that uses the global db op to specify what the app needs
- * 		build router for user pages:
- * 			every link points to a class that is automatically instantiated(made into an obj) when the link is clicked, optionally you can destroy this page object when the user navigates away, but you can keep it if you want specifically the page to remember something.
  * 		
- * - link Artikelen will instantiate the sub-class 'Artikelen' so that it can change the content rendering property of its parent class 'PageRenderer'
+ * - (active) perfect & complete 'PageRenderer' class
+ * - (active) build content control functions and cms
+ * - add a parameter to the constructor of the pagetemplates class to specify which page to request, also add a destructor but check when it will run first and if it keeps the rest of the code still working.
  * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * build a seperate file that contains all the requires content and let the PageRenderer class summon it. Use a fitting format like JSON or similar.
- * find the best way to initialize a class when navigating to a certain page.
- * perfect & complete 'PageRenderer' class
- * build login class
- * build crud classes
- * build search crud function
+ * - every link points to a class that is automatically instantiated(made into an obj) when the link is clicked, optionally you can destroy this page object when the user navigates away, but you can keep it if you want specifically the page to remember something.
+ * - build login class
+ * - find the best way to initialize a class when navigating to a certain page.
+ * - build crud classes
+ * - build crud search function
  
  √ make .htaccess file 
  √ make root and directory-seperator contstants 
-_
+ √ build a seperate file that contains all the required content and let the PageRenderer class summon it. Use a fitting format like JSON or similar.
+ 
+ * Deprecated:
+ * - link Artikelen will instantiate the sub-class 'Artikelen' so that it can change the content rendering property of its parent class 'PageRenderer'
+ * - build operations that can decide which page can use it, example:
+ * 		a global db read operation that only reads tables from the db
+ * 			a specific read operation that uses the global db op to specify what the app needs
+ * 		build router for user pages:
+ * 
 
 */?>

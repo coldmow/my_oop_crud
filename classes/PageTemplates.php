@@ -5,7 +5,7 @@ class PageTemplates{
 
 	public function getHTMLsct( $sections){
 		
-		$output = '';
+		$output = null;
 		foreach ($sections as $key) {
 			$output .= $this->template[ $key];
 		}
@@ -65,7 +65,7 @@ class PageTemplates{
 			<h1>Welcome</h1>
 			<p>
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus eius exercitationem nemo doloremque eveniet aperiam ipsum beatae qui error iste quos quisquam, est debitis maiores optio, voluptates consequuntur repellendus nisi voluptatem ratione asperiores amet fuga perferendis corrupti. Odio, iusto sunt dignissimos ipsum repellat officia hic libero esse, cumque tempore saepe sequi repudiandae aperiam enim velit quae dolor quos a eum.
-			</p>  './* */'
+			</p>
 		</div>
 		';
 	}
