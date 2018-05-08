@@ -6,21 +6,64 @@ class PageRenderer{
 	private $templatesObj;
 	private	$rqdPage;
 	// private	$DB_control			= new DBcontroller();
+
+	private function domEditor(){
+		$dom = $this->DOMhandler;
+		$domxPath = new DOMXPath( $dom);
+
+		$DOMcontent = $domxPath->query('//div[contains(@class,"content")]');
+
+		$addedElement = $dom->createElement('h2', 'YES! H2 added with domdoc!');
+		
+		$DOMcontent->appendChild($addedElement);
+		$this->DOMhandler->appendChild($DOMcontent);
+		
+	}
 	
 	private function getTemplate( $sections ){
 
 		$template = $this->templatesObj->getHTMLsct( $sections);
 
 		$this->DOMhandler->loadHTML( $template);
+		$this->domEditor();
 	}
 	
-	private function sectionCaller( $sections){
+	private function pagePicker(){
+		switch ( isset($_GET['url']) ? $_GET['url'] : '' ) {
+			case 'Artikelen':
+				$this->getTemplate( ['header', 'menu', 'content'] );
 
-		$this->getTemplate( $sections );
+				// $this->getTemplate( ['header think about whether this can be an object for requesting more information', 'menu', 'content'] );
+				break;
+			
+			case 'Locaties':
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+			
+			case 'Fabrieken':
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+			
+			case 'Voorraad':
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+			
+			case 'Medewerkers':
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+			
+			case 'Contact':
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+			
+			default:
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				break;
+		}
 	}
 
-	public function print_content( $sections){
-		$this->sectionCaller( $sections );
+	public function print_content(){
+		$this->pagePicker();
 		return $this->DOMhandler->saveHTML();
 	}
 

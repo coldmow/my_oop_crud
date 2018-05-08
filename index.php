@@ -20,12 +20,11 @@ $page = new PageRenderer();
 
 <!DOCTYPE html>
 <html lang="en">
-	<!--head-->
-		<?=$page->print_hard( ['headinfo'])?>
-	<!--head-->
-	<body>
-		<?=$page->print_hard(['header', 'menu', 'content'])?>
-	</body>
+	
+	<!-- the only distinct functions to call here must be only print_content with all the articles per page, and print_header with the header info per page -->
+	
+	<?=$page->print_content()?>
+	<!--?=$page->print_content(['header', 'menu', 'content'])?-->
 </html>
 
 <?php
@@ -34,7 +33,7 @@ $page = new PageRenderer();
 
 /**
  * TODO:
- * 		
+ * - (active) generate the html elements of the pages with the DOMDocument class in a generic way as possible
  * - (active) perfect & complete 'PageRenderer' class
  * - (active) build content control functions and cms
  * - add a parameter to the constructor of the pagetemplates class to specify which page to request, also add a destructor but check when it will run first and if it keeps the rest of the code still working.
