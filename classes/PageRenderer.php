@@ -13,10 +13,31 @@ class PageRenderer{
 
 		$DOMcontent = $domxPath->query('//div[contains(@class,"content")]');
 
-		$addedElement = $dom->createElement('h2', 'YES! H2 added with domdoc!');
+		$addedElement = $dom->createElement('h2', 'YES! H2 added with DOMdocument!');
+
+		$finder = new DomXPath($dom);
+		$classname="header";
+		$nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
 		
-		$DOMcontent->appendChild($addedElement);
-		$this->DOMhandler->appendChild($DOMcontent);
+		echo '<pre>';
+		var_dump($addedElement);		
+		var_dump($DOMcontent);
+		echo '</pre>';
+
+
+		
+		foreach ( $dom->getElementsByTagName('div') as $element){
+			if ($element->getAttribute('class') == "menubox"){
+			 $selectedElement = $element;
+			}
+		}
+		$selectedElement->appendChild( $addedElement);
+		
+		// $dom->appendChild( $addedElement );
+
+		// $addedTestElement = $dom->createElement('h3', 'Hmmmmh, curious...');
+
+		// $addedElement->appendChild( $addedTestElement);
 		
 	}
 	
@@ -31,31 +52,25 @@ class PageRenderer{
 	private function pagePicker(){
 		switch ( isset($_GET['url']) ? $_GET['url'] : '' ) {
 			case 'Artikelen':
-				$this->getTemplate( ['header', 'menu', 'content'] );
+				$this->getTemplate( ['header'] );
 
 				// $this->getTemplate( ['header think about whether this can be an object for requesting more information', 'menu', 'content'] );
 				break;
-			
 			case 'Locaties':
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
-			
 			case 'Fabrieken':
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
-			
 			case 'Voorraad':
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
-			
 			case 'Medewerkers':
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
-			
 			case 'Contact':
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
-			
 			default:
 				$this->getTemplate( ['header', 'menu', 'content'] );
 				break;
@@ -80,7 +95,6 @@ class PageRenderer{
 		}
 		//is it efficient to load in all content when just instantiating the object? It's better to load it in when running the object methods that request the page section.	:
 	}
-	
 }
 
 

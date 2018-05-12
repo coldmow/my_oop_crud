@@ -64,13 +64,11 @@ class PageTemplates{
 <div class="menubox">
 	<ul>
 		<li><a href="Home">Home</a></li>
-		'./* 
 		<li><a href="Artikelen">Artikelen</a></li>
 		<li><a href="Locaties">Locaties</a></li>
 		<li><a href="Fabrieken">Fabrieken</a></li>
 		<li><a href="Voorraad">Voorraad opvragen</a></li>
 		<li><a href="Medewerkers">Medewerkers</a></li> 
-		*/'
 		<li><a href="Contact">Contact</a></li>
 	</ul>
 </div>
