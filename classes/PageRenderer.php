@@ -9,35 +9,24 @@ class PageRenderer{
 
 	private function domEditor(){
 		$dom = $this->DOMhandler;
-		$domxPath = new DOMXPath( $dom);
-
-		$DOMcontent = $domxPath->query('//div[contains(@class,"content")]');
 
 		$addedElement = $dom->createElement('h2', 'YES! H2 added with DOMdocument!');
-
-		$finder = new DomXPath($dom);
-		$classname="header";
-		$nodes = $finder->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
-		
-		echo '<pre>';
-		var_dump($addedElement);		
-		var_dump($DOMcontent);
-		echo '</pre>';
-
-
 		
 		foreach ( $dom->getElementsByTagName('div') as $element){
 			if ($element->getAttribute('class') == "menubox"){
-			 $selectedElement = $element;
+				$selectedElement = $element;
+				echo '<pre>';
+				var_dump($selectedElement);
+				echo '<br>-----------------------------------------------<br><br>';
+				var_dump( get_class_methods( $selectedElement));
+				echo '</pre>';
 			}
 		}
 		$selectedElement->appendChild( $addedElement);
-		
-		// $dom->appendChild( $addedElement );
 
-		// $addedTestElement = $dom->createElement('h3', 'Hmmmmh, curious...');
+		$addedTestElement = $dom->createElement('h3', 'Hmmmmh, interesting how the object that has been added to the document has in itself the functionality to add something in relation to it... ');
 
-		// $addedElement->appendChild( $addedTestElement);
+		$addedElement->appendChild( $addedTestElement);
 		
 	}
 	
