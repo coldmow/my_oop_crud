@@ -30,6 +30,9 @@ class PageTemplates{
 		] )?>
 		*/
 
+		/*  <![CDATA[ ]]> */
+
+		
 		$this->template['headinfo'] =
 '
 <head>
@@ -38,7 +41,7 @@ class PageTemplates{
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>OOP CRUD Project</title>
 
-<link rel="stylesheet"  <![CDATA[ href="css' . DS . 'style.css"]]> > 
+<link rel="stylesheet"  href="css' . DS . 'style.css" > 
 
 </head>
 ';

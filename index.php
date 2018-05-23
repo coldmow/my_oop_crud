@@ -33,7 +33,6 @@ $page = new PageRenderer();
 
 /**
  * TODO:
- * - (active) generate the html elements of the pages with the DOMDocument class in a generic way as possible
  * - (active) perfect & complete 'PageRenderer' class
  * - (active) build content control functions and cms
  * - add a parameter to the constructor of the pagetemplates class to specify which page to request, also add a destructor but check when it will run first and if it keeps the rest of the code still working.
@@ -44,6 +43,7 @@ $page = new PageRenderer();
  * - build crud classes
  * - build crud search function
  
+ √ (active) generate the html elements of the pages with the DOMDocument class in a generic way as possible
  √ make .htaccess file 
  √ make root and directory-seperator contstants 
  √ build a seperate file that contains all the required content and let the PageRenderer class summon it. Use a fitting format like JSON or similar.
