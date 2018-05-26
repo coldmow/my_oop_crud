@@ -42,8 +42,8 @@ class PageRenderer{
 	private function moduleSelector(){
 		switch ( isset($_GET['url']) ? $_GET['url'] : '' ) {
 			case 'Artikelen':
-				$this->getTemplate( ['header'] );
-				$this->domEditor('test', 2);
+				$this->getTemplate( ['header', 'menu', 'content'] );
+				$this->domEditor('DBtable', 1);
 				break;
 			case 'Locaties':
 				$this->getTemplate( ['header', 'menu', 'content'] );
