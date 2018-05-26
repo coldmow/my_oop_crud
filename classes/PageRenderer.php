@@ -43,7 +43,7 @@ class PageRenderer{
 		switch ( isset($_GET['url']) ? $_GET['url'] : '' ) {
 			case 'Artikelen':
 				$this->getTemplate( ['header', 'menu', 'content'] );
-				$this->domEditor('DBtable', 1);
+				$this->domEditor('DBtable', ['div', 2 ] );
 				break;
 			case 'Locaties':
 				$this->getTemplate( ['header', 'menu', 'content'] );
@@ -62,7 +62,7 @@ class PageRenderer{
 				break;
 			default:
 				$this->getTemplate( ['header', 'menu', 'content'] );
-				$this->domEditor('DBtable', 'menubox');
+				$this->domEditor('DBtable', ['div', 'menubox'] );
 				//			 $rqdelement, $append
 
 				break;

@@ -33,23 +33,23 @@ class Dmodule{
 	public function DmoduleOutput( $rqdElement, $appender){
 		$dom = $this->DOMhandler;
 
-		if( is_string( $appender)){
+		if( is_string( $appender[1] )){
 
-			foreach ( $dom->getElementsByTagName( 'div') as $elements){
+			foreach ( $dom->getElementsByTagName( $appender[0]) as $elements){
 
-				if ($elements->getAttribute( 'class') == $appender){
+				if ($elements->getAttribute( 'class') == $appender[1] ){
 					$selectedElement = $elements;
 					break;
 				}
 			}
 
-		}else if( is_int( $appender)){
-			$appender--;
+		}else if( is_int( $appender[1] )){
+			$appender[1]--;
 
-			$selectedElement = $dom->getElementsByTagName('div')->
-			item( $appender);
+			$selectedElement = $dom->getElementsByTagName( $appender[0])->
+			item( $appender[1] );
 			echo '<pre>';
-			echo $appender;
+			echo $appender[1];
 			// var_dump( $selectedElement);
 			echo '</pre>';
 			
